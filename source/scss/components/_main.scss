@@ -1,0 +1,329 @@
+.main {
+    
+    width: 79.4%;    
+    @include flex-position(row,space-around,center);
+    
+    @include big-tablet {
+        width: 100%;
+    }
+
+    @include tablet {
+        width: 100%;
+        @include flex-position(row,center,none);
+    }
+
+    /* feedaback============================ */
+    &__feddback {
+        width: 47%;
+        background-color:$bck-color ;
+        box-shadow: 0 0 10px #808080;
+
+        @include big-tablet {
+            order:3;
+            width: 50%;
+        }
+
+        @include tablet {
+            order: 2;
+            width: 80%;
+            height: 300px;
+            overflow: scroll;
+            border-radius: 9px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 2.8em;
+    }
+
+    &__list {
+        @include flex-position(row,none,none);
+        img {
+            height: 45px;
+            border-radius: 50%;
+        }
+    }
+
+    &__items {
+        @include flex-position(row,none,none);
+        padding: 1.5em 1.5em 0 1.5em;
+        margin-left: 1em;
+        @include fonts($family,12px,400);
+        line-height: 17px;
+        width: 347px;
+        color: $title;
+    }
+
+    &__items--prat {
+        background-color: rgb(255, 250, 250) ;
+        border: 2px solid #f1f1f193 ;
+    }
+
+    &__sub-list {
+        margin:  1.6em 0 1.6em 1em;
+        border-left: 1px solid #f1f1f1 ;
+    }
+
+
+    &__sub-items {
+        padding: 1em;
+        margin: 0 0 1.4em 1.4em;
+        background-color: rgb(255, 250, 250) ;
+        border: 2px solid #f1f1f193 ;
+    }
+
+    &__sub-items:nth-child(2) {
+        margin: 0 0 0 1.4em;
+    }
+}
+
+
+.title-main {
+    @include fonts($family,calc(10px + 4 * (100vw / 1366)),700);
+    color: $title;
+}
+
+/* большой график =====================================
+====================================================== */
+.shedule {
+    width: 68%;
+    background-color:$bck-color ;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    
+    @include  big-tablet {
+        width: 50%;
+    }
+
+    @include  tablet {
+        width: 80%;
+        margin: 0.5em 0 0.5em;
+        border-radius: 9px;
+    }
+
+    &__function {
+        @include flex-position(row,none,center);
+        padding: 0 1.3em;
+    }
+
+    &__title {
+        flex-grow: 1;
+    }
+
+    &__button {
+        height: 30px;
+        border: none;
+        background-color: $bck-color;
+        position: relative;
+        display: block;
+        @include fonts($family,calc(10px + 2 * (100vw / 1366)),400);
+        color: $title;
+        border: none;
+        background:transparent;
+    }
+
+    &__graph {
+        width: 100%;
+        height: 198px;
+        text-align: center;
+
+        @include  big-tablet {  
+            overflow: scroll;
+        }
+        @include  tablet {  
+            overflow: scroll;
+        }      
+    }
+}
+/* график 150$$$$ */
+
+.short-shedule {
+    text-align: center;
+    background-color:$bck-color ;
+    box-shadow: 0 0 10px #808080;;
+
+    &__graph {
+        width: 160px;
+        height: 160px;
+        margin: 1.2em 1.9em;
+        background:url(../image/main/circle.png)center no-repeat;
+    }
+
+    @include big-tablet {
+        order:-1;
+    }
+
+    @include tablet {
+        order:4;
+        width: 90%;
+    }
+
+    &__price {
+        color: #1b3cd1;
+    }
+}
+/* task 
+=============================================== */
+
+.task {
+    @include flex-position(row,space-between,none);
+    width: 51%;
+
+    @include big-tablet {
+       width: 37%;
+       @include flex-position(row,center,none);
+       order:2;
+    }
+
+    @include tablet {
+        @include flex-position(row,center,none);
+        order:2;
+        width: 81%;
+        margin: 0.5em 0;
+     }
+    
+}
+
+.task__todo {
+    width: 100%;
+    margin-bottom: 1em;
+    background-color:$bck-color ;
+    box-shadow: 0 0 10px #808080;
+
+    @include tablet {
+        border-radius: 9px;
+    }
+}
+
+.container {
+    padding: 1.3em;  
+}
+
+.container--no-padding {
+    padding: 1.3em 0;
+}
+
+.task__todo label {
+    position: relative;
+    display: block;
+    padding: 17px 0;
+    @include fonts ($family,14px,400);
+    color: $title;
+    cursor: pointer;
+}
+
+.task__todo input[type="checkbox"] {
+    -webkit-appearance: none;
+}
+
+.task__todo i {
+    position: absolute;
+    top: 19px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid $gradient;
+}
+
+.task__todo input[type="checkbox"]:checked ~ i {
+    top: 15px;
+    border-top: none;
+    border-right: none;
+    height: 12px;
+    width: 12px;
+    transform: rotate(-45deg);
+}
+
+.task__todo span {
+    position: relative;
+    left: 25px;
+    transition: 1s;
+    
+}
+
+.task__todo span:before {
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 1s;
+}
+
+.task__todo input[type="checkbox"]:checked ~ span:before {
+    transform: scaleX(1);
+    transform-origin: center;
+    transition: transform 1s;
+}
+
+.task__todo input[type="checkbox"]:checked ~ span {
+    color: #154e6b;
+}
+
+/* два малеьнькх квадрата ======================
+============================================= */
+.short-shedule {
+    background-color:$bck-color ;
+    box-shadow: 0 0 10px #808080;
+
+    @include big-tablet {
+       width: 259px;
+       margin: 0.5em 0;
+    }
+
+     @include tablet {
+        border-radius: 9px;
+    }
+
+    &__graph--progress {
+        margin:0 1em 1em;
+        height: 90px;  
+        background:url(../image/main/progress.png)center no-repeat;
+    }
+
+    &__title--progress {
+        padding-bottom: 1.9em;
+    }
+
+    &__price {
+        padding: 0.5em 0 1em;
+        @include fonts ($family,calc(15px + 5 * (100vw / 1366)),400);
+    }
+
+    &__graph--snipments {
+        margin: 0 1.4em 3em;  
+        height: 110.5px;   
+        background:url(../image/main/snipments.png)center no-repeat;
+    }
+
+    &__title--snipments {
+        padding-bottom: 1.9em;
+    }
+
+}
+
+.short-shedule--margin {
+    margin-right: 0.6em;
+    @include big-tablet {
+        margin: 0 0 ;
+     }
+}
+
+.feedback__span {
+    font-weight: bold;
+}
+
+.main__span--greadient {
+    margin-right: 2em;
+    font-weight: bold;
+    color: $gradient;
+}
+
+.main__span--margin {
+    margin-right: 2em;
+}
+
+/* =============================================== */
+

@@ -1,0 +1,91 @@
+.aside {
+    width: 100%;
+    background-color: #fff;
+    img {
+        border-radius: 50%;
+    }
+
+    @include big-tablet {
+        width: 55%;
+        height: 280px;
+        overflow: scroll;
+    }
+
+    @include tablet {
+       width: 100%;
+       border-radius: 9px;
+    }
+
+    &__icons {
+        @include flex-position(row,none,center);
+        background-color: $gradient;
+        
+        @include big-tablet {
+            background-color: #d3d3d3;
+        }
+    }
+
+    #{&}__button {
+        border: none;
+        position: relative;
+
+        &:hover:after {
+        content: ''; 
+        position: absolute;
+        top: 50px;
+        left: 33px;
+        border: 10px solid transparent; /* Прозрачные границы */
+        border-top: 10px solid $gradient; 
+        }
+
+        &:hover {
+            background-color: #f30808;
+        }
+    }
+
+    &__icon-users {
+        width: 33.3%;
+        height: 50px;
+        background: url(../image/aside/users.png) center no-repeat;
+    }
+
+    &__icon-message {
+        width: 33.3%;
+        height: 50px;
+        background: url(../image/aside/chat.png) center no-repeat;
+    }
+
+    &__icon-like {
+        width: 33.3%;
+        height: 50px;
+        background: url(../image/aside/chat.png) center no-repeat;
+    }
+
+    &__friends {
+        @include flex-position(row,space-between,center);
+        padding: 1.3em 1.3em;
+        border-bottom: 1px solid $title;
+    }
+
+    &__text {
+        width: 50%;
+    }
+
+    &__name {
+        padding-top: 0.9em;
+        margin-bottom: 0.6em;
+        @include fonts ($family, calc(10px + 3 * (100vw / 1366)),700);
+        color: $title;
+    }
+
+    &__subtitle {
+        @include fonts ($family,10px,400);
+        color: $title;
+    }
+
+    &__message {
+        width: 30px;
+        height: 30px;
+        background: url(../image/aside/message.png) center no-repeat;
+    }
+}

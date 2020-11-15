@@ -1,0 +1,60 @@
+.navigation {
+    @include  tablet {
+        display: none;
+    }
+
+    position: fixed;
+    top: 0;
+    width: 70px;
+    min-height: 100vh;
+    background-color: $gradient;
+
+    &__logo {
+        width: 100%;
+        height: 70px;
+        background: url(../image/navigation/logo.png) center no-repeat; 
+        background-color: $bck-color;
+    }
+
+    &__list {
+        @include flex-position(column,none,center);
+        text-align: center;
+    }
+
+    #{&}__items {
+        position: relative;
+        width: 41px;
+        height: 20px;
+        margin-top: 40px;
+
+        &:hover:after {
+        content: ''; 
+        position: absolute;
+        top: 6px;
+        left: 55px;
+        border: 10px solid transparent; /* Прозрачные границы */
+        border-left: 10px solid $gradient; 
+        }
+    }
+    
+    &__link {
+        text-decoration: none;
+    }
+
+    p{
+        margin-top: 5px;
+        @include fonts($family,10px,400);
+        color: $text-icon;
+    }
+    
+    &__power {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        top: 0px;
+        width: 30px;
+        height: 30px;
+        margin: auto auto 40px;
+    }
+}

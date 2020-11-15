@@ -1,0 +1,57 @@
+.footer {
+    background-color: $bck-color;
+
+    @include big-tablet {
+        width: 45%;
+    }
+
+    @include tablet {
+        width: 100%;
+    }
+
+    &__title {
+        padding: 1.6em 0;
+        text-align: center;
+        @include fonts($family,calc(10px + 4 * (100vw / 1366)),700);
+
+        @include big-tablet {
+            background-color: #d3d3d3;
+            color: #ffffff;
+        }
+
+        @include tablet {
+           padding: 1.6em 0 1.6em;
+        }
+    }
+
+    &__list {
+        @include flex-position(row, center, none);
+        padding: 1.5em;
+
+        @include tablet {
+           padding: .5em;
+        }
+        
+    }
+
+    &__image {
+        width: 60px;
+        height: 60px; 
+
+        @include tablet {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &__item {
+        width: 60px;
+        height: 60px;
+
+        @include tablet {
+            width: 30px;
+            height: 30px;
+        }
+        margin: .3em;
+    }
+}

@@ -1,0 +1,64 @@
+.aside-footer {
+    width: 20.6%;
+
+    @include big-tablet {
+        width: 100%;
+        @include flex-position(row,none,none);
+    }
+
+    @include tablet {
+        margin: 0.5em 0 0;
+        @include flex-position(row,center,none);
+        border-radius: 9px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    /* кнопка поиска */
+
+    form {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__search {
+        padding: .4em .4em;
+        position: relative;
+        flex-grow: 1;
+
+        @include big-tablet {
+         display: none;
+        }
+    }
+
+    &__input {
+        position: relative;
+        width: 90%;
+        height: 32px;
+        padding-left: 15px;
+        border: none;
+        border-radius: 10px;
+        border-bottom: 1px solid $title;
+        background: #f8f8f8;
+    }
+
+    #{&}__button-search {
+        position: absolute;
+        top: 2px;
+        right: 30px;
+        width: 42px;
+        height: 32px;
+        background: url(../image/aside/search.png) center no-repeat;
+        border: none;
+    }
+
+    #{&}__button-change {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 42px;
+        height: 32px;
+        background: url(../image/aside/pencil.png) center no-repeat;
+        border: none;
+    }  
+}

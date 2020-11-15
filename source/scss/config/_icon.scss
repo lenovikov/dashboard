@@ -1,0 +1,136 @@
+/* три точки градиент========================================= */
+
+.discription:before {
+    content: '';
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        left: -8px;
+        top: 0px;
+        width: 5px;
+        height: 5px;
+        
+    }
+
+.discription {
+content: '';
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 28.5px;
+    top: 33px;
+    width: 5px;
+    height: 5px;
+}
+
+.discription:after {
+    content: '';
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 8px;
+    top: 0px;
+    width: 5px;
+    height: 5px;   
+}
+/* ========================================================= */
+
+/* иконка серая 
+==============================================*/
+.discription-gray:after {
+    content: '';
+    border-radius: 50%;
+    background-color:$title;
+    position: absolute;
+    left: 0px;
+    top: 8px;
+    width: 5px;
+    height: 5px;   
+}
+
+.discription-gray {
+    border-radius: 50%;
+    background-color:$title;
+    position: absolute;
+    left: 28px;
+    top: 35px;
+    width: 5px;
+    height: 5px;
+    
+}
+
+.discription-gray:before {
+    content: '';
+    border-radius: 50%;
+    background-color:$title;
+    position: absolute;
+    left: 0px;
+    top: -8px;
+    width: 5px;
+    height: 5px;
+}
+
+/* main-icon =========================================*/
+.shedule__discription-gray:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color:$title;     
+}
+
+.shedule__discription-gray {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color:$title;
+}
+
+.shedule__discription-gray:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: -8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color:$title;
+}
+
+/* треугольники
+========================================= */
+.span-red {
+    position: relative;
+    margin-left: 13px;
+    @include fonts($family,calc(10px + 2 * (100vw / 1366)) ,400);
+    color: $title;
+}
+
+.span-red:before {
+    content: ''; 
+    position: absolute;
+    top: 3px;
+    left: -10px;
+    border: 5px solid transparent; /* Прозрачные границы */
+    border-top: 7px solid $span-red; /* Добавляем треугольник */
+}
+
+.span-blue {
+    position: relative;
+    margin-left: 13px;
+    @include fonts($family,calc(10px + 2 * (100vw / 1366)) ,400);
+    color: $title;
+}
+
+.span-blue:before {
+    content: ''; 
+    position: absolute;
+    top: 0px;
+    left: -10px;
+    border: 5px solid transparent; /* Прозрачные границы */
+    border-bottom: 7px solid $span-blue; /* Добавляем треугольник */
+}

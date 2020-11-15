@@ -1,0 +1,252 @@
+.header {
+    /* top
+    ===================================================== */
+    width: 100%;
+    min-height: 166px;
+    background-color: $bck-color;
+
+    @include big-tablet {
+        @include flex-position(row,center,center);
+    }
+
+    @include tablet {
+        @include flex-position(row,center,center);
+        border-radius: 9px;
+        box-shadow: 0 0 10px #808080;
+    }
+
+    &__top {
+        @include flex-position(row,none,center);
+    }
+
+    &__button {
+        @include flex-position(row,center,none);  
+        @include big-tablet {
+            width: 40%;
+            @include flex-position(row,space-around,none); 
+        }
+
+        @include tablet {
+            width: 100%;
+            order: 2;
+        }
+    }
+
+    form {
+        position: relative;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    &__search {
+        position: relative;
+        flex-grow: 1;
+
+        @include tablet {
+            width: 100%;
+            order: 1;
+        }
+
+        @include mobile {
+            margin-top: 1em;
+        }
+    }
+
+    &__input {
+        position: relative;
+        width: 250px;
+        height: 32px;
+        padding-left: 15px;
+        border-radius: 42px;
+        border: none;
+        background: #f8f8f8;
+    }
+
+    &__button-search {
+        position: absolute;
+        top: -5px;
+        right: 30px;
+        width: 42px;
+        height: 42px;
+        background: url(../image/header/loupe.png) center no-repeat;
+        border: none;
+    }
+
+    #{&}__icons {
+        display: block;
+        width: 61px;
+        height: 70px;
+        border: none;
+        background-color: $bck-color;
+
+        &:hover{
+            background-color: #d3d3d3;
+            border-radius: 20%;
+        }
+    }
+
+    &__info {
+        @include flex-position(row,none,none);
+        min-width: 16%;
+
+        @include big-tablet {
+            flex-grow: 1;
+        }
+
+        @include tablet {
+            order: 0;
+        }
+    }
+
+    &__text {
+        padding: 1em 0 0 1.1em;
+    }
+
+    &__name {
+        margin-bottom: .6em;
+        @include fonts($family,calc(10px + 3 * (100vw / 1366px)) ,400);
+        color: $gradient;
+    }
+
+    &__subtitle {
+        padding-bottom: 2em;
+        @include fonts($family,10px,400);
+        color: $title;
+    }
+
+    // иконки
+    // =========================================
+
+    &__icons-button {
+        position: relative;
+        background: url(../image/header/button.png) center no-repeat;
+    }
+    &__image {
+        display: block;
+    }
+
+    &__icons-folders {
+        background:url(../image/header/folder-icon.png) center no-repeat;
+    }
+
+    &__icons-settings {
+        background:url(../image/header/settings-icon.png) center no-repeat;
+    }
+
+    &__icons-upload {
+        background:url(../image/header/upload-icon.png) center no-repeat;
+    }
+
+    &__icons-meassage {
+        background:url(../image/header/message-icon.png) center no-repeat;
+    }
+
+    &__icons-planet {
+        background:url(../image/header/planet-icon.png) center no-repeat;
+    }
+
+    #{&}__discription {
+        position: relative;
+
+        @include tablet {
+            display: none;
+        }
+
+        &:hover {
+            background-color: $gradient;
+        }
+    }
+
+    /* burger */
+    .menu-btn {
+        position: absolute;
+        z-index: 1;
+        display: none;
+        top: calc(50% - 14px);
+        right: 0;
+        width: 30px;
+        height: 28px;
+        cursor: pointer;
+
+        @include tablet {
+            display: block;
+        }
+    }
+    
+    .menu-btn__burger {
+        position: absolute;
+        top: 13px;
+        right: 15px;
+        height: 3px;
+        width: 30px;
+        background-color: #333333;
+    }
+    
+    .menu-btn__burger:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        height: 3px;
+        width: 30px;
+        background-color: #333333;
+    }
+    
+    .menu-btn__burger:after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        height: 3px;
+        width: 30px;
+        background-color: #333333;
+    }
+
+    /* bottom
+    ====================================================================== */
+    &__bottom {
+        padding: 1em 0 0 ;
+        @include flex-position(row,space-around,center);
+        
+        @include big-tablet{
+            padding: 1em 0 ;
+            flex-wrap: nowrap;
+            height: 90px;
+            overflow-x: scroll;
+        }
+
+        @include tablet{
+            height: 90px;
+            width: 96%;
+            overflow-x: scroll;
+        }
+    }
+
+    &__title {
+        margin-bottom: 0.7em;
+        @include fonts($family,calc(10px + 3 * (100vw / 1366)) ,700);
+        color: $title;
+    }
+    
+    &__kol {
+        margin-bottom: 0.3em;
+        @include fonts($family,calc(14px + 6 * (100vw / 1366)) ,700);
+        color: $gradient;
+    }   
+
+    &__add {
+        @include fonts($family,12px,400);
+        color: $gradient;
+    }
+
+    &__part-bottom {
+        @include big-tablet{
+            margin: 0 .5em;;
+        }
+
+        @include tablet{
+            margin: 0 1em;
+        }
+    }
+}
+
+/* адаптивный дизайн
+======================================= */
